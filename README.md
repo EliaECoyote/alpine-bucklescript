@@ -1,6 +1,6 @@
 # Alpine-bucklescript
 
-Bucklescript on a node-alpine image. Ready to use for OCaml / ReasonML projects that target javascript
+Bucklescript on a node-alpine image. Ready to use for OCaml / ReasonML projects that target javascript.
 
 ```txt
 THIS DOCKER IMAGE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
@@ -9,6 +9,20 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 IN NO EVENT SHALL THE MAINTAINERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE DOCKER IMAGE OR THE USE OR OTHER DEALINGS IN THE DOCKER IMAGE.
+```
+
+---
+
+## Usage
+
+```Docker
+FROM eliaecoyote/alpine-bucklescript:7
+
+WORKDIR /home/node/app
+
+COPY your_project ./
+
+RUN npm link "bs-platform" && yarn bsb -make-world
 ```
 
 ---
